@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '2183729' => 'max@ditto.live' }
-  s.source           = { :git => 'https://github.com/2183729/CombineDitto.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/getditto/CombineDitto.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/dittolive'
 
   s.ios.deployment_target = '13.0'
