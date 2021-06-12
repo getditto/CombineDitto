@@ -1,0 +1,31 @@
+PODS:
+  - CombineDitto (0.1.0):
+    - DittoSwift (>= 1.0.4)
+  - DittoObjC (1.0.4)
+  - DittoSwift (1.0.4):
+    - DittoObjC (= 1.0.4)
+  - Fakery (5.1.0)
+
+DEPENDENCIES:
+  - CombineDitto (from `../`)
+  - Fakery
+
+SPEC REPOS:
+  trunk:
+    - DittoObjC
+    - DittoSwift
+    - Fakery
+
+EXTERNAL SOURCES:
+  CombineDitto:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CombineDitto: b1e568f2d5276c3640b0c0e7f0729a12ad3b28f8
+  DittoObjC: 2b43a649452c955284365dbc714369cef18e4fca
+  DittoSwift: 68612d60faf2816fda12ff01ed849ec88571f84b
+  Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
+
+PODFILE CHECKSUM: 203676482faa5c0f2d7ed3457276bc8b69c9ca4e
+
+COCOAPODS: 1.10.1

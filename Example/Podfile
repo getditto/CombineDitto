@@ -1,9 +1,10 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '14.0'
 
 target 'CombineDitto_Example' do
   pod 'CombineDitto', :path => '../'
+  pod "Fakery"
 
   target 'CombineDitto_Tests' do
     inherit! :search_paths
