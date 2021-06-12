@@ -33,11 +33,5 @@ extremely easy to integrate DittoSwift into SwiftUI apps.
   s.swift_version = '5.0'
   s.source_files = 'CombineDitto/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'CombineDitto' => ['CombineDitto/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'DittoSwift', '>=1.0.4'
 end
