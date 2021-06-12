@@ -31,6 +31,12 @@ it, simply add the following line to your Podfile:
 pod 'CombineDitto'
 ```
 
+or if you want to use it from this source:
+
+```ruby
+pod 'CombineDitto' :git => 'https://github.com/getditto/CombineDitto.git', :branch => 'master'
+```
+
 ## Quick Start
 
 1. Import `DittoSwift` and `CombineDitto`
