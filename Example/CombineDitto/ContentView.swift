@@ -12,54 +12,60 @@ import CombineDitto
 
 import Fakery
 
-class DataSource: ObservableObject {
+class ViewModel: ObservableObject {
 
-    @Published var todos = [ToDo]()
+    @Published var newTaskBody = ""
+    @Published var tasks = [Task]()
+
     var cancellables = Set<AnyCancellable>()
 
-    private let todoPublisher = AppDelegate.ditto.store["todos"].findAll().publisher()
     private let faker = Faker()
 
-    func start() {
-        todoPublisher
+    init() {
+        AppDelegate.ditto.store["tasks"]
+            .findAll()
+            .publisher()
             .map({ snapshot in
                 return snapshot
                     .documents
-                    .map({ ToDo(document: $0) })
+                    .map({ Task(document: $0) })
                     .reversed()
             })
-            .assign(to: &$todos)
+            .assign(to: \.tasks, on: self)
+            .store(in: &cancellables)
     }
 
     func addRandom() {
-        try! AppDelegate.ditto.store["todos"].insert([
+        try! AppDelegate.ditto.store["tasks"].insert([
             "body": faker.lorem.sentence(),
             "isCompleted": faker.number.randomBool()
         ])
     }
 
-    func add(text: String) {
-        try! AppDelegate.ditto.store["todos"].insert([
-            "body": text,
+    func add() {
+        try! AppDelegate.ditto.store["tasks"].insert([
+            "body": newTaskBody,
             "isCompleted": faker.number.randomBool()
         ])
+        newTaskBody = ""
     }
 
     func clear() {
-        AppDelegate.ditto.store["todos"].findAll().remove()
+        AppDelegate.ditto.store["tasks"].findAll().remove()
     }
 
 
     func delete(_ indexSet: IndexSet) {
-        let todoIds = indexSet.map({ todos[$0].id })
+        let todoIds = indexSet.map({ tasks[$0].id })
         todoIds.forEach { id in
-            AppDelegate.ditto.store["todos"].findByID(id).remove()
+            AppDelegate.ditto.store["tasks"].findByID(id).remove()
         }
     }
 
-    func toggle(id: String, isCompleted: Bool) {
-        AppDelegate.ditto.store["todos"].findByID(id).update { mutableDoc in
-            mutableDoc?["isCompleted"].set(isCompleted)
+    func toggle(_id: String) {
+        AppDelegate.ditto.store["tasks"].findByID(_id).update { mutableDoc in
+            guard let mutableDoc = mutableDoc else { return }
+            mutableDoc["isCompleted"].set(!mutableDoc["isCompleted"].boolValue)
         }
     }
 
@@ -67,60 +73,56 @@ class DataSource: ObservableObject {
 
 struct ContentView: View {
 
-    @ObservedObject var dataSource: DataSource
+    @ObservedObject var viewModel: ViewModel
     @State private var newText: String = ""
 
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text("Create new to do")) {
-                    HStack {
-                        TextField("New To Do", text: $newText)
-                        Button(action: {}) {
-                            Text("Add")
-                                .fontWeight(.bold)
-                                .padding()
-                        }.onTapGesture {
-                            dataSource.add(text: newText)
-                        }
+            VStack {
+                HStack {
+                    TextField("New Task", text: $viewModel.newTaskBody)
+                    Button("Add") {
+                        viewModel.add()
                     }
-                }
-                Section(header: Text("Current to do items"))  {
-                    ForEach(dataSource.todos, id: \.id) { todo in
-                        HStack(spacing: 10) {
-                            Button(action: {
-                                dataSource.toggle(id: todo.id, isCompleted: !todo.isCompleted)
-                            }){
-                                Image(todo.isCompleted ? "box_checked": "box_empty").scaledToFit()
+                }.padding()
+                List {
+                    Section(header: Text("Current tasks"))  {
+                        ForEach(viewModel.tasks, id: \.id) { task in
+                            HStack(spacing: 10) {
+                                Image(systemName: task.isCompleted ? "circle.fill": "circle")
+                                    .renderingMode(.template)
+                                    .foregroundColor(.accentColor)
+                                    .onTapGesture {
+                                        viewModel.toggle(_id: task._id)
+                                    }
+                                Text(task.body)
                             }
-                            Text(todo.body)
-                        }
 
-                    }.onDelete(perform: dataSource.delete)
-                    .animation(.default)
+                        }.onDelete(perform: viewModel.delete)
+                        .animation(.default)
+                    }
                 }
             }
             .navigationTitle("CombineDitto")
             .toolbar(content: {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button("Clear") {
-                        dataSource.clear()
+                        viewModel.clear()
                     }
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("Add Random") {
-                        dataSource.addRandom()
+                        viewModel.addRandom()
                     }
                 }
             })
-        }.onAppear(perform: {
-            dataSource.start()
-        })
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(dataSource: DataSource())
+        ContentView(viewModel: ViewModel())
     }
 }

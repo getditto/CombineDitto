@@ -33,7 +33,7 @@ extremely easy to integrate DittoSwift into SwiftUI apps.
   s.swift_version = '5.0'
   s.source_files = 'CombineDitto/Classes/**/*'
   
-  s.dependency 'DittoSwift', '>=1.0.4'
+  s.dependency 'DittoSwift', '>=1.0.9'
 
   # DittoSwift isn't available for all simulator types
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

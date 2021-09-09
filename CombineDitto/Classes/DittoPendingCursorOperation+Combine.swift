@@ -1,12 +1,14 @@
 import Combine
 import DittoSwift
 
-public struct Snapshot {
-    public var documents: [DittoDocument]
-    public var event: DittoLiveQueryEvent
-}
 
 public extension DittoPendingCursorOperation {
+
+    struct Snapshot {
+        public var documents: [DittoDocument]
+        public var event: DittoLiveQueryEvent
+    }
+
 
     struct Publisher: Combine.Publisher {
 
@@ -50,22 +52,24 @@ public extension DittoPendingCursorOperation {
         }
     }
 
-    func publisher() -> AnyPublisher<Snapshot, Never> {
-        return Publisher(self).eraseToAnyPublisher()
+    func publisher() -> Publisher {
+        return Publisher(self)
     }
 }
 
 
-public struct SingleSnapshot {
-    public var document: DittoDocument?
-    public var event: DittoSingleDocumentLiveQueryEvent
-}
 
 public extension DittoPendingIDSpecificOperation {
 
+    struct Snapshot {
+        public var document: DittoDocument?
+        public var event: DittoSingleDocumentLiveQueryEvent
+    }
+
+
     struct Publisher: Combine.Publisher {
 
-        public typealias Output = SingleSnapshot
+        public typealias Output = Snapshot
         public typealias Failure = Never
 
         private let cursor: DittoPendingIDSpecificOperation
@@ -81,12 +85,12 @@ public extension DittoPendingIDSpecificOperation {
 
     }
 
-    fileprivate final class Subscription<SubscriberType: Subscriber>: Combine.Subscription where SubscriberType.Input == SingleSnapshot, SubscriberType.Failure == Never {
+    fileprivate final class Subscription<SubscriberType: Subscriber>: Combine.Subscription where SubscriberType.Input == Snapshot, SubscriberType.Failure == Never {
         private var liveQuery: DittoLiveQuery?
 
         init(subscriber: SubscriberType, cursor: DittoPendingIDSpecificOperation) {
             liveQuery = cursor.observe { (doc, event) in
-                _ = subscriber.receive(SingleSnapshot(document: doc, event: event))
+                _ = subscriber.receive(Snapshot(document: doc, event: event))
             }
         }
 
@@ -105,7 +109,7 @@ public extension DittoPendingIDSpecificOperation {
         }
     }
 
-    func publisher() -> AnyPublisher<SingleSnapshot, Never> {
-        return Publisher(self).eraseToAnyPublisher()
+    func publisher() -> Publisher {
+        return Publisher(self)
     }
 }

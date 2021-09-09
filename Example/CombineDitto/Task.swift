@@ -9,14 +9,18 @@
 import Foundation
 import DittoSwift
 
-struct ToDo: Hashable, Identifiable {
-    var id: String
+struct Task {
+    var _id: String
     var body: String
     var isCompleted: Bool
 
     init(document: DittoDocument) {
-        self.id = document.id.toString()
+        self._id = document["_id"].stringValue
         self.body = document["body"].stringValue
         self.isCompleted = document["isCompleted"].boolValue
     }
+}
+
+extension Task: Identifiable {
+    var id: String { return _id }
 }

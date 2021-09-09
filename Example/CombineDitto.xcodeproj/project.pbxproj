@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D7C3C8B267460E2003BC6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8A267460E2003BC6DB /* ContentView.swift */; };
 		2D7C3C8D2674614B003BC6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */; };
-		2D7C3C8F2674F437003BC6DB /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8E2674F437003BC6DB /* ToDo.swift */; };
+		2D7C3C8F2674F437003BC6DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8E2674F437003BC6DB /* Task.swift */; };
 		2D7C3C912674F567003BC6DB /* license_token.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C3C902674F567003BC6DB /* license_token.txt */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -30,12 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23593D36AF952578DC6E20DC /* CombineDitto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CombineDitto.podspec; path = ../CombineDitto.podspec; sourceTree = "<group>"; };
+		23593D36AF952578DC6E20DC /* CombineDitto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CombineDitto.podspec; path = ../CombineDitto.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2B22DC535B4F75451D1A1015 /* Pods-CombineDitto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineDitto_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CombineDitto_Tests/Pods-CombineDitto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C929317E7999A32A0F49CAA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2D7C3C8A267460E2003BC6DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D7C3C8E2674F437003BC6DB /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		2D7C3C8E2674F437003BC6DB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2D7C3C902674F567003BC6DB /* license_token.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license_token.txt; sourceTree = "<group>"; };
 		47296FD6D67228F74B36326C /* Pods-CombineDitto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineDitto_Example.release.xcconfig"; path = "Target Support Files/Pods-CombineDitto_Example/Pods-CombineDitto_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CombineDitto_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDitto_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +113,7 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				2D7C3C8A267460E2003BC6DB /* ContentView.swift */,
 				2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */,
-				2D7C3C8E2674F437003BC6DB /* ToDo.swift */,
+				2D7C3C8E2674F437003BC6DB /* Task.swift */,
 			);
 			name = "Example for CombineDitto";
 			path = CombineDitto;
@@ -348,7 +348,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				2D7C3C8B267460E2003BC6DB /* ContentView.swift in Sources */,
 				2D7C3C8D2674614B003BC6DB /* SceneDelegate.swift in Sources */,
-				2D7C3C8F2674F437003BC6DB /* ToDo.swift in Sources */,
+				2D7C3C8F2674F437003BC6DB /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,10 +491,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "live.ditto.angular-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -508,10 +509,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "live.ditto.angular-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -1,9 +1,9 @@
 PODS:
-  - CombineDitto (0.1.0):
-    - DittoSwift (>= 1.0.4)
-  - DittoObjC (1.0.4)
-  - DittoSwift (1.0.4):
-    - DittoObjC (= 1.0.4)
+  - CombineDitto (0.1.2):
+    - DittoSwift (>= 1.0.9)
+  - DittoObjC (1.0.9)
+  - DittoSwift (1.0.9):
+    - DittoObjC (= 1.0.9)
   - Fakery (5.1.0)
 
 DEPENDENCIES:
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CombineDitto: b1e568f2d5276c3640b0c0e7f0729a12ad3b28f8
-  DittoObjC: 2b43a649452c955284365dbc714369cef18e4fca
-  DittoSwift: 68612d60faf2816fda12ff01ed849ec88571f84b
+  CombineDitto: 2d2b390f77a5e116391bd36d7ffdb61b93151aa4
+  DittoObjC: ffcce1e27d6ffdebbf6222f7327d75c84efda7e3
+  DittoSwift: 006f3ab413afbe56f4fa3bc11a9ed87b1e15fe38
   Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
 
 PODFILE CHECKSUM: 203676482faa5c0f2d7ed3457276bc8b69c9ca4e
