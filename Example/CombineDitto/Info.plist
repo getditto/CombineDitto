@@ -30,8 +30,12 @@
 	<array>
 		<string>_http-alt._tcp.</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>To insert camera images as attachments.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Uses WiFi to connect and sync with nearby devices</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To insert attachments from your photo library</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

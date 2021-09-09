@@ -12,7 +12,7 @@ import CombineDitto
 
 import Fakery
 
-class ViewModel: ObservableObject {
+class TasksPageViewModel: ObservableObject {
 
     @Published var newTaskBody = ""
     @Published var tasks = [Task]()
@@ -71,58 +71,56 @@ class ViewModel: ObservableObject {
 
 }
 
-struct ContentView: View {
+struct TasksPage: View {
 
-    @ObservedObject var viewModel: ViewModel
-    @State private var newText: String = ""
+    @ObservedObject var viewModel = TasksPageViewModel()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    TextField("New Task", text: $viewModel.newTaskBody)
-                    Button("Add") {
-                        viewModel.add()
-                    }
-                }.padding()
-                List {
-                    Section(header: Text("Current tasks"))  {
-                        ForEach(viewModel.tasks, id: \.id) { task in
-                            HStack(spacing: 10) {
-                                Image(systemName: task.isCompleted ? "circle.fill": "circle")
-                                    .renderingMode(.template)
-                                    .foregroundColor(.accentColor)
-                                    .onTapGesture {
-                                        viewModel.toggle(_id: task._id)
-                                    }
-                                Text(task.body)
-                            }
+        VStack {
+            HStack {
+                TextField("New Task", text: $viewModel.newTaskBody)
+                Button("Add") {
+                    viewModel.add()
+                }
+            }.padding()
+            List {
+                Section(header: Text("Current tasks"))  {
+                    ForEach(viewModel.tasks, id: \.id) { task in
+                        HStack(spacing: 10) {
+                            Image(systemName: task.isCompleted ? "circle.fill": "circle")
+                                .renderingMode(.template)
+                                .foregroundColor(.accentColor)
+                                .onTapGesture {
+                                    viewModel.toggle(_id: task._id)
+                                }
+                            Text(task.body)
+                        }
 
-                        }.onDelete(perform: viewModel.delete)
-                        .animation(.default)
-                    }
+                    }.onDelete(perform: viewModel.delete)
+                    .animation(.default)
                 }
             }
-            .navigationTitle("CombineDitto")
-            .toolbar(content: {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button("Clear") {
-                        viewModel.clear()
-                    }
-                }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("Add Random") {
-                        viewModel.addRandom()
-                    }
-                }
-            })
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationTitle("Tasks")
+        .toolbar(content: {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                Button("Clear") {
+                    viewModel.clear()
+                }
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button("Add Random") {
+                    viewModel.addRandom()
+                }
+            }
+        })
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TasksPage_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: ViewModel())
+        NavigationView {
+            TasksPage()
+        }
     }
 }

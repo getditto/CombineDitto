@@ -8,7 +8,7 @@
 import DittoSwift
 import Combine
 
-public extension DittoStore {
+public extension DittoCollection {
 
     struct Publisher: Combine.Publisher {
 
@@ -21,18 +21,16 @@ public extension DittoStore {
         public typealias Output = DittoAttachmentFetchEvent
         public typealias Failure = Never
 
-        private let store: DittoStore
-        private let collection: String
+        private let collection: DittoCollection
         private let attachmentToken: DittoAttachmentToken
 
-        init(store: DittoStore, collection: String, attachmentToken: DittoAttachmentToken) {
-            self.store = store
+        init(collection: DittoCollection, attachmentToken: DittoAttachmentToken) {
             self.collection = collection
             self.attachmentToken = attachmentToken
         }
 
         public func receive<S>(subscriber: S) where S : Subscriber, Publisher.Failure == S.Failure, Publisher.Output == S.Input {
-            let subscription = Subscription(subscriber: subscriber, store: store, collection: collection, attachmentToken: attachmentToken)
+            let subscription = Subscription(subscriber: subscriber, collection: collection, attachmentToken: attachmentToken)
             subscriber.receive(subscription: subscription)
         }
 
@@ -64,14 +62,12 @@ public extension DittoStore {
     }
 
     fileprivate final class Subscription<SubscriberType: Subscriber>: Combine.Subscription where SubscriberType.Input == DittoAttachmentFetchEvent, SubscriberType.Failure == Never {
-        private let collection: String
-        private let store: DittoStore
+        private let collection: DittoCollection
         private var fetcher: DittoAttachmentFetcher?
 
-        init(subscriber: SubscriberType, store: DittoStore, collection: String, attachmentToken: DittoAttachmentToken) {
-            self.store = store
+        init(subscriber: SubscriberType, collection: DittoCollection, attachmentToken: DittoAttachmentToken) {
             self.collection = collection
-            fetcher = store[collection].fetchAttachment(token: attachmentToken, onFetchEvent: { event in
+            fetcher = collection.fetchAttachment(token: attachmentToken, onFetchEvent: { event in
                 _ = subscriber.receive(event)
             })
         }
@@ -91,8 +87,8 @@ public extension DittoStore {
         }
     }
 
-    func fetchAttachment(collection: String, attachmentToken: DittoAttachmentToken) -> Publisher {
-        return Publisher(store: self, collection: collection, attachmentToken: attachmentToken)
+    func fetchAttachmentPublisher(attachmentToken: DittoAttachmentToken) -> Publisher {
+        return Publisher(collection: self, attachmentToken: attachmentToken)
     }
 
 }

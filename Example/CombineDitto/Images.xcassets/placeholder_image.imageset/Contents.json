@@ -9,7 +9,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "box_checked.png",
+      "filename" : "orionthemes-placeholder-image.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UIHostingController(rootView: ContentView(viewModel: ViewModel()))
+        window.rootViewController = UIHostingController(rootView: InitialPage())
         self.window = window
         window.makeKeyAndVisible()
     }

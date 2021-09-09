@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D7C3C8B267460E2003BC6DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8A267460E2003BC6DB /* ContentView.swift */; };
+		2D7C3C8B267460E2003BC6DB /* TasksPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8A267460E2003BC6DB /* TasksPage.swift */; };
 		2D7C3C8D2674614B003BC6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */; };
 		2D7C3C8F2674F437003BC6DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8E2674F437003BC6DB /* Task.swift */; };
 		2D7C3C912674F567003BC6DB /* license_token.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C3C902674F567003BC6DB /* license_token.txt */; };
+		2DACDC2D26EAA5F20059A499 /* InitialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC2C26EAA5F20059A499 /* InitialPage.swift */; };
+		2DACDC3126EAA8010059A499 /* GalleryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3026EAA8010059A499 /* GalleryPage.swift */; };
+		2DACDC3326EAA9C60059A499 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3226EAA9C60059A499 /* ImagePicker.swift */; };
+		2DACDC3526EAAD9F0059A499 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3426EAAD9F0059A499 /* Picture.swift */; };
+		2DACDC3726EAC1A40059A499 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3626EAC1A40059A499 /* FileUtils.swift */; };
+		2DACDC3926EAC3910059A499 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3826EAC3910059A499 /* GalleryImage.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -33,10 +39,16 @@
 		23593D36AF952578DC6E20DC /* CombineDitto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CombineDitto.podspec; path = ../CombineDitto.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2B22DC535B4F75451D1A1015 /* Pods-CombineDitto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineDitto_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CombineDitto_Tests/Pods-CombineDitto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C929317E7999A32A0F49CAA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		2D7C3C8A267460E2003BC6DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2D7C3C8A267460E2003BC6DB /* TasksPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPage.swift; sourceTree = "<group>"; };
 		2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2D7C3C8E2674F437003BC6DB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2D7C3C902674F567003BC6DB /* license_token.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license_token.txt; sourceTree = "<group>"; };
+		2DACDC2C26EAA5F20059A499 /* InitialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPage.swift; sourceTree = "<group>"; };
+		2DACDC3026EAA8010059A499 /* GalleryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPage.swift; sourceTree = "<group>"; };
+		2DACDC3226EAA9C60059A499 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2DACDC3426EAAD9F0059A499 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		2DACDC3626EAC1A40059A499 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		2DACDC3826EAC3910059A499 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
 		47296FD6D67228F74B36326C /* Pods-CombineDitto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineDitto_Example.release.xcconfig"; path = "Target Support Files/Pods-CombineDitto_Example/Pods-CombineDitto_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CombineDitto_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDitto_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +94,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2DACDC2B26EAA59F0059A499 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				2DACDC2F26EAA7F70059A499 /* Gallery */,
+				2DACDC2E26EAA7EB0059A499 /* Tasks */,
+				2DACDC2C26EAA5F20059A499 /* InitialPage.swift */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		2DACDC2E26EAA7EB0059A499 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				2D7C3C8E2674F437003BC6DB /* Task.swift */,
+				2D7C3C8A267460E2003BC6DB /* TasksPage.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		2DACDC2F26EAA7F70059A499 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				2DACDC3026EAA8010059A499 /* GalleryPage.swift */,
+				2DACDC3226EAA9C60059A499 /* ImagePicker.swift */,
+				2DACDC3426EAAD9F0059A499 /* Picture.swift */,
+				2DACDC3626EAC1A40059A499 /* FileUtils.swift */,
+				2DACDC3826EAC3910059A499 /* GalleryImage.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -107,13 +150,12 @@
 		607FACD21AFB9204008FA782 /* Example for CombineDitto */ = {
 			isa = PBXGroup;
 			children = (
+				2DACDC2B26EAA59F0059A499 /* Pages */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				2D7C3C8A267460E2003BC6DB /* ContentView.swift */,
 				2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */,
-				2D7C3C8E2674F437003BC6DB /* Task.swift */,
 			);
 			name = "Example for CombineDitto";
 			path = CombineDitto;
@@ -345,9 +387,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DACDC3726EAC1A40059A499 /* FileUtils.swift in Sources */,
+				2DACDC3526EAAD9F0059A499 /* Picture.swift in Sources */,
+				2DACDC3926EAC3910059A499 /* GalleryImage.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				2D7C3C8B267460E2003BC6DB /* ContentView.swift in Sources */,
+				2D7C3C8B267460E2003BC6DB /* TasksPage.swift in Sources */,
 				2D7C3C8D2674614B003BC6DB /* SceneDelegate.swift in Sources */,
+				2DACDC3326EAA9C60059A499 /* ImagePicker.swift in Sources */,
+				2DACDC3126EAA8010059A499 /* GalleryPage.swift in Sources */,
+				2DACDC2D26EAA5F20059A499 /* InitialPage.swift in Sources */,
 				2D7C3C8F2674F437003BC6DB /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
