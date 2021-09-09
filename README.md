@@ -85,7 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 2. Create a data source:
 
-```swift
 class DataSource: ObservableObject {
 
     @Published var documents = [DittoDocument]()
