@@ -1,19 +1,27 @@
-import Combine
+//
+//  DittoPendingIDSpecificOperation+Combine.swift
+//  CombineDitto
+//
+//  Created by Maximilian Alexander on 9/28/21.
+//
+
 import DittoSwift
+import Combine
 
 
-public extension DittoPendingCursorOperation {
+public extension DittoPendingIDSpecificOperation {
 
-    typealias Snapshot = (documents: [DittoDocument], event: DittoLiveQueryEvent)
+    typealias Snapshot = (document: DittoDocument?, event: DittoSingleDocumentLiveQueryEvent)
+
 
     struct Publisher: Combine.Publisher {
 
         public typealias Output = Snapshot
         public typealias Failure = Never
 
-        private let cursor: DittoPendingCursorOperation
+        private let cursor: DittoPendingIDSpecificOperation
 
-        init(_ cursor: DittoPendingCursorOperation) {
+        init(_ cursor: DittoPendingIDSpecificOperation) {
             self.cursor = cursor
         }
 
@@ -27,9 +35,9 @@ public extension DittoPendingCursorOperation {
     fileprivate final class Subscription<SubscriberType: Subscriber>: Combine.Subscription where SubscriberType.Input == Snapshot, SubscriberType.Failure == Never {
         private var liveQuery: DittoLiveQuery?
 
-        init(subscriber: SubscriberType, cursor: DittoPendingCursorOperation) {
-            liveQuery = cursor.observe { (docs, event) in
-                _ = subscriber.receive(Snapshot(documents: docs, event: event))
+        init(subscriber: SubscriberType, cursor: DittoPendingIDSpecificOperation) {
+            liveQuery = cursor.observe { (doc, event) in
+                _ = subscriber.receive(Snapshot(document: doc, event: event))
             }
         }
 
@@ -52,6 +60,3 @@ public extension DittoPendingCursorOperation {
         return Publisher(self)
     }
 }
-
-
-

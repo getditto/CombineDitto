@@ -24,7 +24,9 @@ class GalleryPageViewModel: ObservableObject {
             .store["pictures"]
             .findAll()
             .publisher()
-            .map({ snapshot in snapshot.documents.map({ Picture(document: $0) }) })
+            .map({ docs, _ in
+                return docs.map({ Picture(document: $0) })
+            })
             .assign(to: \.pictures, on: self)
             .store(in: &cancellables)
     }

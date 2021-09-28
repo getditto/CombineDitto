@@ -95,9 +95,8 @@ class DataSource: ObservableObject {
 
     func start() {
         todoPublisher
-            .map({ snapshot in
-                return snapshot
-                    .documents
+            .map({ (documents, event) in
+                return documents
             })
             .assign(to: &$todos)
     }
