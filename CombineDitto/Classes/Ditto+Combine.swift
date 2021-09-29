@@ -8,7 +8,7 @@
 import DittoSwift
 import Combine
 
-extension Ditto {
+public extension Ditto {
     
     struct RemotePeersPublisher: Combine.Publisher {
 
