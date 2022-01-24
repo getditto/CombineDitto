@@ -2,6 +2,9 @@ use_frameworks!
 
 platform :ios, '14.0'
 
+install! 'cocoapods',
+  :warn_for_unused_master_specs_repo => false
+
 target 'CombineDitto_Example' do
   pod 'CombineDitto', :path => '../'
   pod "Fakery"
@@ -9,6 +12,6 @@ target 'CombineDitto_Example' do
   target 'CombineDitto_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end
