@@ -1,5 +1,5 @@
 PODS:
-  - CombineDitto (0.1.2):
+  - CombineDitto (0.1.4):
     - DittoSwift (>= 1.0.9)
   - DittoObjC (1.0.9)
   - DittoSwift (1.0.9):
@@ -21,11 +21,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CombineDitto: 2d2b390f77a5e116391bd36d7ffdb61b93151aa4
+  CombineDitto: e257ba5278efa6dce6b4849cc24590b87cc57481
   DittoObjC: ffcce1e27d6ffdebbf6222f7327d75c84efda7e3
   DittoSwift: 006f3ab413afbe56f4fa3bc11a9ed87b1e15fe38
   Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
 
-PODFILE CHECKSUM: 203676482faa5c0f2d7ed3457276bc8b69c9ca4e
+PODFILE CHECKSUM: ed1bd180059f4a2d3411ab83bbdfccc0b3aadf91
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
