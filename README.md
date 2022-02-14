@@ -128,7 +128,7 @@ struct ContentView: View {
 
 ## Author
 
-www.ditto.live
+[www.ditto.live](https://ditto.live)
 
 ## License
 
