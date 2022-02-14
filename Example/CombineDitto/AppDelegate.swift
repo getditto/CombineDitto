@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let identity = DittoIdentity.development(appName: "live.ditto.combine-example")
+        let identity = DittoIdentity.development(appID: "live.ditto.combine-example")
         Self.ditto = Ditto(identity: identity)
 
         return true
