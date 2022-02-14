@@ -1,27 +1,32 @@
 # CombineDitto
 
-`pod "CombineDitto"` is an extension methods library for `pod "DittoSwift"` that seamlessly works with Apple's `Combine` library. This library also includes an Example To Do List Application 
+`pod "CombineDitto"` is an extension methods library for `pod "DittoSwift"` that seamlessly works with Apple's `Combine` library. This library also includes an Example To Do List Application
 
-<img src="https://www.ditto.live/assets/static/img/logos/logo.svg" width=100 height=100>
+[![Ditto logo](https://www.ditto.live/_ipx/w_96,q_75/%2Flogos%2Flogo.png?url=%2Flogos%2Flogo.png&w=96&q=75)](https://www.ditto.live/)
 
-[![CI Status](https://img.shields.io/travis/2183729/CombineDitto.svg?style=flat)](https://travis-ci.org/2183729/CombineDitto)
 [![Version](https://img.shields.io/cocoapods/v/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 [![License](https://img.shields.io/cocoapods/l/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 [![Platform](https://img.shields.io/cocoapods/p/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 [![Platform](https://img.shields.io/cocoapods/p/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 
-## Running the example app 
+## 🚚 Moved - Now in DittoSwift!
+
+This Ditto extension library is now obsolete. [DittoSwift version 1.1.1](https://docs.ditto.live/changelog)
+and higher now include very similar APIs for the publishers that originally lived in this project.
+
+## Running the example app
 
 <img src="https://media.giphy.com/media/2yRCXzR1cH8WEypLbd/giphy.gif"/>
 
-1. To run the example project, clone the repo, and run `pod install` from the Example directory first. 
-2. The example app is a to do list application and will require a Ditto license token. This file is ignored from the source control, you'll need to add it in. 
+1. To run the example project, clone the repo, and run `pod install` from the Example directory first.
+2. The example app is a to do list application and will require a Ditto license token. This file is ignored from the source control, you'll need to add it in.
 
 ## Requirements
 
-* iOS 13.0 or higher
-* `DittoSwift` 1.0.4 or higher
-* A Ditto license token
+- iOS 13.0 or higher
+- `DittoSwift` 1.0.4 or higher
+- A Ditto license token
+
 ## Installation
 
 CombineDitto is available through [CocoaPods](https://cocoapods.org). To install
@@ -60,7 +65,6 @@ import CombineDitto
 
 ## Usage with SwiftUI
 
-
 1. Construct a Ditto instance. Usually this can be in the `AppDelegate.swift` code like so:
 
 ```swift
@@ -70,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     static var ditto: Ditto!
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -80,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
+
 }
 
 2. Create a data source:
@@ -111,7 +115,7 @@ struct ContentView: View {
     @ObservedObject var dataSource: DataSource
 
     var body: some View {
-        NavigationView { 
+        NavigationView {
           ForEach(dataSource.documents, id: \.id) { document in
             Text(document["text"].stringValue)
           }
