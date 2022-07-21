@@ -9,12 +9,25 @@
 [![Platform](https://img.shields.io/cocoapods/p/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 [![Platform](https://img.shields.io/cocoapods/p/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
 
-## 🚚 Moved - Now in DittoSwift!
+# 🚚 Moved - Now in DittoSwift!
 
 This Ditto extension library is now obsolete. [DittoSwift version 1.1.1](https://docs.ditto.live/changelog)
 and higher now include very similar APIs for the publishers that originally lived in this project.
 
+Now, you can use `liveQueryPublisher()` directly:
+
+```swift
+import DittoSwift
+
+ditto.store.collection("products")
+  .find("categoryName == '\(categoryName)'")
+  .liveQueryPublisher()
+```
+
+# Legacy documentation
+
 ## Running the example app
+
 
 <img src="https://media.giphy.com/media/2yRCXzR1cH8WEypLbd/giphy.gif"/>
 
