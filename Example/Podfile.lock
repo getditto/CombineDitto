@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CombineDitto: e257ba5278efa6dce6b4849cc24590b87cc57481
+  CombineDitto: e6a0d54289b8f65a34493e67c4c3ed3cbfb82cab
   DittoObjC: ffcce1e27d6ffdebbf6222f7327d75c84efda7e3
   DittoSwift: 006f3ab413afbe56f4fa3bc11a9ed87b1e15fe38
   Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d

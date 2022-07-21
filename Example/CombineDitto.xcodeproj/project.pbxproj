@@ -10,7 +10,6 @@
 		2D7C3C8B267460E2003BC6DB /* TasksPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8A267460E2003BC6DB /* TasksPage.swift */; };
 		2D7C3C8D2674614B003BC6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8C2674614B003BC6DB /* SceneDelegate.swift */; };
 		2D7C3C8F2674F437003BC6DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7C3C8E2674F437003BC6DB /* Task.swift */; };
-		2D7C3C912674F567003BC6DB /* license_token.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C3C902674F567003BC6DB /* license_token.txt */; };
 		2DACDC2D26EAA5F20059A499 /* InitialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC2C26EAA5F20059A499 /* InitialPage.swift */; };
 		2DACDC3126EAA8010059A499 /* GalleryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3026EAA8010059A499 /* GalleryPage.swift */; };
 		2DACDC3326EAA9C60059A499 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACDC3226EAA9C60059A499 /* ImagePicker.swift */; };
@@ -255,7 +254,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -273,10 +272,9 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CombineDitto" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -298,7 +296,6 @@
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				2D7C3C912674F567003BC6DB /* license_token.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,14 +439,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -495,14 +495,17 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
