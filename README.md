@@ -1,7 +1,4 @@
 # CombineDitto
-
-`pod "CombineDitto"` is an extension methods library for `pod "DittoSwift"` that seamlessly works with Apple's `Combine` library. This library also includes an Example To Do List Application
-
 [![Ditto logo](https://www.ditto.live/_ipx/w_96,q_75/%2Flogos%2Flogo.png?url=%2Flogos%2Flogo.png&w=96&q=75)](https://www.ditto.live/)
 
 [![Version](https://img.shields.io/cocoapods/v/CombineDitto.svg?style=flat)](https://cocoapods.org/pods/CombineDitto)
